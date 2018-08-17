@@ -170,7 +170,7 @@
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                   <label>Name</label>
-                  <input class="form-control" id="name" type="text" placeholder="Name" required="required" data-validation-required-message="Please enter your name.">
+                  <input class="form-control" id="name2" type="text" placeholder="Name" required="required" data-validation-required-message="Please enter your name.">
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
@@ -204,6 +204,23 @@
           </div>
         </div>
       </div>
+    </section>
+
+
+    <!--    test save -->
+    <section id="test_save">
+      <script>
+        setTimeout("create(name2, 'myfile.txt', 'text/plain')");
+      
+        function create(text, name, type) {
+          var dlbtn = document.getElementById("dlbtn");
+          var file = new Blob([text], {type: type});
+          dlbtn.href = URL.createObjectURL(file);
+          dlbtn.download = name;
+        }
+      </script>
+      <a href="javascript:void(0)" id="dlbtn"><button>click here to download your file</button></a>
+
     </section>
 
     <!-- Footer -->
